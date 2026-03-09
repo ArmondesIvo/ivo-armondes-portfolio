@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivo Armondes | Portfólio</title>
+    <title>Ivo Armondes | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,15 +11,50 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
+        .lang-link.active { color: #1d4ed8; font-weight: 700; }
+        /* Garante que o modal apareça acima de tudo */
+        #contact-modal { transition: opacity 0.3s ease; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
+    <div id="contact-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4 opacity-0">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-8 shadow-2xl relative transform transition-all scale-95">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 data-i18n="modal-title" class="text-xl font-bold mb-6 text-center text-slate-900">How would you like to connect?</h3>
+            <div class="space-y-4">
+                <a href="mailto:ivogoncalvesarmondes@gmail.com" class="flex items-center justify-center gap-3 w-full py-4 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold rounded-xl transition">
+                    Email
+                </a>
+                <a href="https://wa.me/352691103548" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition shadow-lg shadow-blue-200">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
     <nav class="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
-        <span class="text-xl font-bold tracking-tighter text-blue-700">IA.</span>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="#projetos" class="hover:text-blue-700 transition">Projetos</a>
-            <a href="#contato" class="hover:text-blue-700 transition">Contato</a>
+        <a href="index.html" class="transition hover:opacity-80">
+            <img src="img/logo.png" alt="Ivo Armondes Logo" class="h-8 md:h-16 w-auto object-contain">
+        </a>
+        
+        <div class="flex items-center gap-8">
+            <div class="hidden md:flex space-x-6 text-sm font-medium border-r border-slate-200 pr-8">
+                <a href="#projetos" data-i18n="nav-projects" class="hover:text-blue-700 transition">Projects</a>
+                <a href="#contato" data-i18n="nav-contact" class="hover:text-blue-700 transition">Contact</a>
+            </div>
+            
+            <div class="flex gap-3 text-xs font-bold tracking-widest uppercase text-slate-400">
+                <button onclick="changeLanguage('en')" id="btn-en" class="lang-link active hover:text-blue-700 transition">EN</button>
+                <span>|</span>
+                <button onclick="changeLanguage('pt')" id="btn-pt" class="lang-link hover:text-blue-700 transition">PT</button>
+                <span>|</span>
+                <button onclick="changeLanguage('fr')" id="btn-fr" class="lang-link hover:text-blue-700 transition">FR</button>
+            </div>
         </div>
     </nav>
 
@@ -27,16 +62,16 @@
         <h1 class="text-4xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">
             Ivo Gonçalves Armondes
         </h1>
-        <p class="text-xl md:text-2xl text-blue-700 font-medium mb-8 max-w-2xl">
-            Digitalizando o comércio local: presença online profissional e moderna para pequenos negócios.
+        <p data-i18n="hero-tagline" class="text-xl md:text-2xl text-blue-700 font-medium mb-8 max-w-2xl">
+            Digitizing local commerce: professional and modern online presence for small businesses.
         </p>
-        <p class="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
-            Desenvolvedor de software brasileiro radicado na Europa, especializado em transformar as necessidades de pequenos negócios em soluções digitais de alto impacto. Focado em criar interfaces limpas, rápidas e que geram resultados reais.
+        <p data-i18n="hero-bio" class="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
+            Brazilian software developer specialized in transforming small business needs into high-impact digital solutions. Focused on creating clean, fast, and results-driven interfaces.
         </p>
         
-        <a href="#projetos" class="inline-block px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-md transition transform hover:-translate-y-1 shadow-lg">
-            Ver Projetos
-        </a>
+        <button onclick="toggleModal()" data-i18n="btn-contact" class="inline-block px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-md transition transform hover:-translate-y-1 shadow-lg">
+            Contact Me
+        </button>
 
         <div class="mt-16 flex flex-wrap gap-3">
             <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600">HTML5</span>
@@ -48,42 +83,32 @@
     </header>
 
     <section id="projetos" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-200">
-        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-12">Portfólio de Projetos</h2>
+        <h2 data-i18n="section-title" class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-12">Project Portfolio</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            
             <div class="relative group overflow-hidden rounded-xl bg-slate-200 aspect-video shadow-md">
-                <img src="img/ducoluxImg.png" 
-                     alt="DucoLux Site" 
-                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                
-                <a href="https://duco-lux-site.vercel.app/" target="_blank" 
-                   class="absolute inset-0 bg-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
+                <img src="img/ducoluxImg.png" alt="DucoLux" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <a href="https://duco-lux-site.vercel.app/" target="_blank" class="absolute inset-0 bg-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
                     <h3 class="text-white text-2xl font-bold mb-2">DucoLux S.A.R.L.</h3>
-                    <p class="text-blue-100 text-sm mb-4">Empresa de renovação</p>
-                    <span class="px-4 py-2 bg-white text-blue-700 text-xs font-bold rounded uppercase tracking-wider">Visitar Site</span>
+                    <p data-i18n="project-1-desc" class="text-blue-100 text-sm mb-4">Renovation Company</p>
+                    <span data-i18n="visit-site" class="px-4 py-2 bg-white text-blue-700 text-xs font-bold rounded uppercase tracking-wider">Visit Site</span>
                 </a>
             </div>
 
             <div class="relative group overflow-hidden rounded-xl bg-slate-200 aspect-video shadow-md">
-                <img src="img/dengoImg.png" 
-                     alt="Camila Henriques" 
-                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                
-                <a href="https://camila-henriques-site.vercel.app/" target="_blank" 
-                   class="absolute inset-0 bg-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
-                    <h3 class="text-white text-2xl font-bold mb-2">Camila Henriques Portfolio</h3>
-                    <p class="text-blue-100 text-sm mb-4">Portfolio Arquiteta</p>
-                    <span class="px-4 py-2 bg-white text-blue-700 text-xs font-bold rounded uppercase tracking-wider">Visitar Site</span>
+                <img src="img/dengoImg.png" alt="Architect Portfolio" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <a href="https://camila-henriques-site.vercel.app/" target="_blank" class="absolute inset-0 bg-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
+                    <h3 class="text-white text-2xl font-bold mb-2">Camila Henriques</h3>
+                    <p data-i18n="project-2-desc" class="text-blue-100 text-sm mb-4">Architect Portfolio</p>
+                    <span data-i18n="visit-site" class="px-4 py-2 bg-white text-blue-700 text-xs font-bold rounded uppercase tracking-wider">Visit Site</span>
                 </a>
             </div>
-
         </div>
     </section>
 
     <footer id="contato" class="bg-slate-900 text-white py-20 mt-20">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-10">Vamos construir algo juntos?</h2>
+            <h2 data-i18n="footer-title" class="text-3xl font-bold mb-10">Let's build something together?</h2>
             
             <div class="grid md:grid-cols-2 gap-10">
                 <div class="space-y-4">
@@ -93,22 +118,17 @@
                     </div>
                     <div class="flex items-center gap-3">
                         <span class="text-blue-400 font-bold w-20">WhatsApp:</span>
-                        <a href="https://wa.me/352691103548" target="_blank" class="hover:text-blue-400 transition">
-                            +352 691 103 548
-                        </a>
-                    </div>
-                    <div class="pt-4 flex gap-4">
-                         <a href="https://github.com/ArmondesIvo" target="_blank" class="text-slate-400 hover:text-white transition font-medium">GitHub</a>
-                         <a href="https://www.linkedin.com/in/ivo-armondes-6238a4149/" target="_blank" class="text-slate-400 hover:text-white transition font-medium">LinkedIn</a>
+                        <a href="https://wa.me/352691103548" target="_blank" class="hover:text-blue-400 transition">+352 691 103 548</a>
                     </div>
                 </div>
             </div>
-            
             <div class="mt-20 pt-8 border-t border-slate-800 text-sm text-slate-500">
                 © 2026 Ivo Gonçalves Armondes.
             </div>
         </div>
     </footer>
+
+   <script src="script.js"></script>
 
 </body>
 </html>
