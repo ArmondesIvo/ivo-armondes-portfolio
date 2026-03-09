@@ -30,48 +30,63 @@
         <p class="text-xl md:text-2xl text-blue-700 font-medium mb-8 max-w-2xl">
             Digitalizando o comércio local: presença online profissional e moderna para pequenos negócios.
         </p>
-        <p class="text-lg text-slate-600 max-w-2xl leading-relaxed">
+        <p class="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
             Desenvolvedor de software brasileiro radicado na Europa, especializado em transformar as necessidades de pequenos negócios em soluções digitais de alto impacto. Focado em criar interfaces limpas, rápidas e que geram resultados reais.
         </p>
         
-        <div class="mt-10 flex flex-wrap gap-3">
-            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600 hover:border-blue-700 hover:text-blue-700 transition cursor-default">HTML5</span>
-            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600 hover:border-blue-700 hover:text-blue-700 transition cursor-default">CSS3</span>
-            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600 hover:border-blue-700 hover:text-blue-700 transition cursor-default">JavaScript</span>
-            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600 hover:border-blue-700 hover:text-blue-700 transition cursor-default">React</span>
-            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600 hover:border-blue-700 hover:text-blue-700 transition cursor-default">Node.js</span>
+        <a href="#projetos" class="inline-block px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-md transition transform hover:-translate-y-1 shadow-lg">
+            Ver Projetos
+        </a>
+
+        <div class="mt-16 flex flex-wrap gap-3">
+            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600">HTML5</span>
+            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600">CSS3</span>
+            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600">JavaScript</span>
+            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600">React</span>
+            <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-600">Node.js</span>
         </div>
     </header>
 
     <section id="projetos" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-200">
-        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-12">Projetos em Destaque</h2>
+        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-12">Portfólio de Projetos</h2>
         
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="group">
-                <div class="aspect-video bg-slate-200 rounded-lg mb-6 overflow-hidden relative border border-slate-100 shadow-sm">
-                    <div class="absolute inset-0 flex items-center justify-center text-slate-400 italic">
-                        Screenshot do Projeto
-                    </div>
-                </div>
-                <h3 class="text-2xl font-bold mb-2 group-hover:text-blue-700 transition">Exemplo: Nome do E-commerce</h3>
-                <p class="text-slate-600 mb-4 leading-relaxed">
-                    Plataforma completa de vendas para comércio local com gestão de estoque e integração de pagamentos.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#" class="text-sm font-bold text-blue-700 border-b-2 border-blue-700 pb-1">Ver Site</a>
-                    <a href="#" class="text-sm font-bold text-slate-400 hover:text-slate-800 transition pb-1">GitHub</a>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            
+            <div class="relative group overflow-hidden rounded-xl bg-slate-200 aspect-video shadow-md">
+                <img src="img/ducoluxImg.png" 
+                     alt="DucoLux Site" 
+                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                
+                <a href="https://duco-lux-site.vercel.app/" target="_blank" 
+                   class="absolute inset-0 bg-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
+                    <h3 class="text-white text-2xl font-bold mb-2">DucoLux S.A.R.L.</h3>
+                    <p class="text-blue-100 text-sm mb-4">Empresa de renovação</p>
+                    <span class="px-4 py-2 bg-white text-blue-700 text-xs font-bold rounded uppercase tracking-wider">Visitar Site</span>
+                </a>
             </div>
+
+            <div class="relative group overflow-hidden rounded-xl bg-slate-200 aspect-video shadow-md">
+                <img src="img/dengoImg.png" 
+                     alt="Camila Henriques" 
+                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                
+                <a href="https://camila-henriques-site.vercel.app/" target="_blank" 
+                   class="absolute inset-0 bg-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
+                    <h3 class="text-white text-2xl font-bold mb-2">Camila Henriques Portfolio</h3>
+                    <p class="text-blue-100 text-sm mb-4">Portfolio Arquiteta</p>
+                    <span class="px-4 py-2 bg-white text-blue-700 text-xs font-bold rounded uppercase tracking-wider">Visitar Site</span>
+                </a>
+            </div>
+
         </div>
     </section>
 
     <footer id="contato" class="bg-slate-900 text-white py-20 mt-20">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-10 text-white">Vamos construir algo juntos?</h2>
+            <h2 class="text-3xl font-bold mb-10">Vamos construir algo juntos?</h2>
             
             <div class="grid md:grid-cols-2 gap-10">
                 <div class="space-y-4">
-                    <p class="text-slate-400">Entre em contato para orçamentos ou parcerias:</p>
                     <div class="flex items-center gap-3">
                         <span class="text-blue-400 font-bold w-20">Email:</span>
                         <a href="mailto:ivogoncalvesarmondes@gmail.com" class="hover:text-blue-400 transition">ivogoncalvesarmondes@gmail.com</a>
@@ -82,17 +97,15 @@
                             +352 691 103 548
                         </a>
                     </div>
-                </div>
-
-                <div class="flex md:justify-end items-center">
-                    <a href="https://www.linkedin.com/in/ivo-armondes-6238a4149/" target="_blank" class="px-8 py-3 bg-blue-700 hover:bg-blue-600 transition rounded-md font-bold text-white text-center w-full md:w-auto">
-                        Conectar no LinkedIn
-                    </a>
+                    <div class="pt-4 flex gap-4">
+                         <a href="https://github.com/ArmondesIvo" target="_blank" class="text-slate-400 hover:text-white transition font-medium">GitHub</a>
+                         <a href="https://www.linkedin.com/in/ivo-armondes-6238a4149/" target="_blank" class="text-slate-400 hover:text-white transition font-medium">LinkedIn</a>
+                    </div>
                 </div>
             </div>
             
             <div class="mt-20 pt-8 border-t border-slate-800 text-sm text-slate-500">
-                © 2026 Ivo Gonçalves Armondes. Criado com React & Tailwind.
+                © 2026 Ivo Gonçalves Armondes.
             </div>
         </div>
     </footer>
